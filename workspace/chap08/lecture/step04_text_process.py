@@ -1,19 +1,24 @@
 import os
 
 print(os.getcwd())
+print('='*55)
 
-txt_data = 'D://hello-git//Pywork//workspace/chap08/lecture/txt_data/'
+txt_data = 'D://hello-git//workspace/chap08/data/txt_data/'
 
+# (2) 텍스트 디렉토리 목록 반환
 sub_dir = os.listdir(txt_data)
 print(sub_dir)
 
+# (3) 각 디렉토리의 텍스트 자료 수집 함수
 def textPro(sub_dir) :
     first_txt = []
     second_txt = []
 
-    for  sdir in sub_dir :
+    for sdir in sub_dir :
         dirname = txt_data + sdir
+#        print(dirname)
         file_list = os.listdir(dirname)
+        print(file_list)
 
         for fname in file_list :
             file_path = dirname + '/' + fname
@@ -33,6 +38,7 @@ def textPro(sub_dir) :
 
     return first_txt, second_txt
 
+# (4) 함수 호출
 first_txt, second_txt = textPro(sub_dir)
 
 print("first_txt 길이 : ", len(first_txt))
@@ -44,13 +50,14 @@ print("total_texts 길이 : ", len(tot_texts))
 print(tot_texts)
 print(type(tot_texts))
 
-
+# 이진파일 형태로 저장, 처리
 import pickle
 
-pfile_w = open('D://hello-git//Pywork//workspace/chap08/lecture/txt_data/tot_texts.pck', mode = 'wb')
+txtt_data = 'D://hello-git//workspace/chap08/data/txt_data/tot_texts.pck'
+pfile_w = open('txtt_data', mode = 'wb')
 pickle.dump(tot_texts, pfile_w)
 
-pfile_r = open('D://hello-git//Pywork//workspace/chap08/lecture/txt_data/tot_texts.pck', mode = 'rb')
+pfile_r = open('txtt_data', mode = 'rb')
 tot_texts_read = pickle.load(pfile_r)
 
 print("total_texts 길이 : ", len(tot_texts_read))

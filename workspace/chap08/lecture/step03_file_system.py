@@ -25,4 +25,30 @@ print(os.getcwd())
 
 os.removedirs('test/test2')
 
+os.chdir('..')
+print(os.getcwd())
+
+os.path.abspath('lecture/step01_try_except.py')
+print(os.path.abspath('lecture/step01_try_except.py'))
+
+os.path.dirname('lecture/step01_try_except.py')
+print(os.path.dirname('lecture/step01_try_except.py'))
+
+os.path.exists('d:/hello-git/workspace/chap08')
+print(os.path.exists('d:/hello-git/workspace/chap08'))
+
+os.path.isfile('lecture/step01_try_except.py')
+print(os.path.isfile('lecture/step01_try_except.py'))
+
+os.path.isdir('lecture')
+print(os.path.isdir('lecture'))
+
+os.path.split('C://test/test1.txt')
+print(os.path.split('C://test/test1.txt'))
+print(os.path.join('C:\\test', 'test1.txt'))
+
+print(os.path.getsize('lecture/step01_try_except.py'))
+
+
+
 
