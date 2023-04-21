@@ -69,13 +69,15 @@ print(counters)
 # pyplot 모듈 import
 import matplotlib.pyplot as plt
 
-from matplotlib import font_manager, rcfont_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
+from matplotlib import font_manager, rc
+font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
 rc('font', family = font_name)
 
 print('선 그래프')
-plt.plot(words, counts)
+plt.plot(words, counters)
+plt.show()
 
 print('막대 그래프')
-plt.bar(words, counts)
-
+plt.bar(words, counters)
+plt.show()
 
