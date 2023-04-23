@@ -1,7 +1,7 @@
 import pickle
 
 # (1) pickle file load
-file = open('d:/hello-git/workspace/chap09/data/data.pickle', mode = 'rb')
+file = open('d:/hello-git/git-office/workspace/chap09/data/data.pickle', mode = 'rb')
 news_data2 = pickle.load(file)
 
 # (2) 텍스트 전처리
@@ -57,27 +57,26 @@ print(top5_word)
 
 # 단어와 출현 빈도수 만들기
 words = []
-counters = []
+counts = []
 
 for word, count in top5_word :
     words.append(word)
-    counters.append(count)
+    counts.append(count)
 
 print(words)
-print(counters)
+print(counts)
 
 # pyplot 모듈 import
 import matplotlib.pyplot as plt
-
 from matplotlib import font_manager, rc
+
 font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
 rc('font', family = font_name)
 
 print('선 그래프')
-plt.plot(words, counters)
+plt.plot(words, counts)
 plt.show()
 
 print('막대 그래프')
-plt.bar(words, counters)
+plt.bar(words, counts)
 plt.show()
-
