@@ -25,7 +25,7 @@ for key in pyObj :
 print('='*60)
 
 # (5) json 파일 읽기
-file = open('D:/hello-git/workspace/chap08/data/usagov_bitly.txt', mode = 'r', encoding = 'utf-8')
+file = open('D:/git_office/workspace/chap08/data/usagov_bitly.txt', mode = 'r', encoding = 'utf-8')
 lines = file.readlines()
 
 # (6) json 디코딩(json파일 ==> python dict로)
