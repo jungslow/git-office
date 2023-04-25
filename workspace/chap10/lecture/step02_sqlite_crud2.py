@@ -5,7 +5,7 @@ print(sqlite3.sqlite_version_info)
 
 try :
     # db 연동 객체
-    conn = sqlite3.connect('d:/hello-git/workspace/chap10/data10/sqlite_db')
+    conn = sqlite3.connect('d:/git_office/workspace/chap10/data10/sqlite_db')
 
     # sql 실행 객체
     cursor = conn.cursor()
