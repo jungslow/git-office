@@ -1,6 +1,17 @@
+$ cd /d/hello-git
+$ cd..
+$ mkdir test
+$ cd test
+$ touch start.txt
+$ git init
+$ git add .
+$ git commit -m "first commit"
+$ git log
 $ git reset --hard HEAD^ : 고맙고 무서운 명령어
 
+
 출처 : https://mungto.tistory.com/187
+
 
 https://git-scm.com
 여기에 들어가면 git-bash를 설치 할 수 있다.
