@@ -1,6 +1,9 @@
+''' CRUD : Create, Read   Update Delete
+     DB    Insert, Select Update Delete '''
+
 import pymysql
 
-config = {
+config = {                      # 환경 변수 지정
     'host' : '127.0.0.1',
     'user' : 'scott',
     'password' : 'tiger',
@@ -13,8 +16,8 @@ try :
     conn = pymysql.connect(**config)
     cursor = conn.cursor()
 
-    '''
     # (1) 테이블 생성
+    '''
     sql = """create table goods(
                     code integer primary key,
                     name text(30) unique not null,
@@ -33,15 +36,6 @@ try :
     sql = f"insert into goods values({code}, '{name}', {su}, {dan})"
     cursor.execute(sql)
     conn.commit()  # db 반영
-
-    code = int(input('code 입력 : '))
-    name = input('name 입력 : ')
-    su = int(input('su 입력 : '))
-    dan = int(input('dan 입력 : '))
-    sql = f"insert into goods values({code}, '{name}', {su}, {dan})"
-
-    cursor.execute(sql)
-    conn.commit()       #db 반영
     '''
 
     # (2) code 이용 레코드 수정
@@ -57,6 +51,7 @@ try :
     '''
 
     # (7) 레코드 삭제
+    '''
     code = int(input('삭제할 code 입력 : '))
     sql = f"delete from goods where code = {code}"
     cursor.execute(sql)     # 삭제 반영
@@ -64,14 +59,14 @@ try :
 
     for r in rows:
         #print(r)
-        print('%d     %s        %d      %s' % r)
+        print('%d     %s        %d      %f' % r)
     print('레코드 삭제')
 
     sql = f"delete from goods where code = {code}"
     cursor.execute(sql)  # 삭제 반영
     conn.commit()
-
     '''
+
     # (3) 전체 목록 보기
     sql = "select * from goods"
     cursor.execute(sql)
@@ -79,9 +74,9 @@ try :
 
     for r in rows:
         # print(r)
-        print('%d     %s        %d      %s'%r)
+        print('%d     %s        %d      %f'%r)
     print('검색 레코드 수 : ', len(rows))
-    '''
+
 
     # (4) 상품명 조회
     name = input("\n조회할 상품명 입력 : ")

@@ -20,8 +20,8 @@ config = {
     'host' : '127.0.0.1',
     'user' : 'scott',
     'password' : 'tiger',
-    'database' : 'work'
-    'port' : 3306
+    'database' : 'work',
+    'port' : 3306,
     'charset' : 'utf8',
     'use_unicode' : True}
 
@@ -35,13 +35,14 @@ try :
     id int not null,
     url varchar(150) not null,
     name varchar(50) not null,
+    color varchar(50) not null,
     de char(5))"""
     cursor.execute(sql)
 
     # (5) 레코드 조회
     cursor.execute("select * from labels")
     rows = cursor.fetchall()
-    if row :    # (6) 레코드 있는 경우
+    if rows :    # (6) 레코드 있는 경우
         print("labels 테이블의 레코드 조회")
         for row in rows :
             print(row)
@@ -60,6 +61,7 @@ try :
             conn.commit()
 except Exception as e :
     print('db error : ', e)
+
 finally:
     cursor.close()
     conn.close()
