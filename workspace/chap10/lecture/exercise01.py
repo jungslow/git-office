@@ -52,13 +52,30 @@ try :
 
         elif menu_num == 2 :
             # 2. 레코드 추가
-
-
+            code = int(input('code 입력 : '))
+            name = input('name 입력 : ')
+            su = int(input('su 입력 : '))
+            dan = int(input('dan 입력 : '))
+            sql = f"insert into goods values({code}, '{name}', {su}, {dan})"
+            cursor.execute(sql)
+            conn.commit()
 
         elif menu_num == 3:
             # 3. 레코드 수정
+            code = int(input('수정 code 입력 : '))
+            su = int(input('su 입력 : '))
+            dan = int(input('dan 입력 : '))
+            sql = f"update into goods set su = {su}, dan = {dan} where code = {code}"
+            cursor.execute(sql)
+            conn.commit()
+
         elif menu_num == 4:
             # 4. 레코드 삭제
+            code = int(input('삭제할 code 입력 : '))
+            sql = f"delete from goods where code = {code}"
+            cursor.execute(sql)
+            conn.commit()
+
         elif menu_num == 5:
             print('프로그램 종료 : ')
             break
