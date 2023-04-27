@@ -38,8 +38,8 @@ try :
 
             elif sel == 2 :
                 # (2) 상품명 조회
-                name = input('상품명 입력 :')
-                sql = f"select & from goods where name like '%{name}%'"
+                name = input("\n조회할 상품명 입력 : ")
+                sql = f"select from goods where name like '%{name}%'"
                 cursor.execute(sql)
                 dataset = cursor.fetchall()
 
